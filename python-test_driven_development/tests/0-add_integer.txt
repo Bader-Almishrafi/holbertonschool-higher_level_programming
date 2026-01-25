@@ -1,0 +1,39 @@
+The ``add_integer`` function adds two numbers (integers or floats).
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Regular addition
+>>> add_integer(1, 2)
+3
+>>> add_integer(100, -2)
+98
+>>> add_integer(2)
+100
+
+Integer casting (floats are cast to int)
+>>> add_integer(1.4, 2)
+3
+>>> add_integer(100.3, -2)
+98
+
+Check type (must raise TypeError with exact message)
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+Missing arguments
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Float overflow (casting very large float)
+>>> add_integer(1e308, 1)
+100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118336
+
+Cannot convert float NaN to integer
+>>> add_integer(float('nan'), 1)
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
