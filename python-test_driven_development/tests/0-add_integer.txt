@@ -24,15 +24,14 @@ TypeError: b must be an integer
 Traceback (most recent call last):
 TypeError: a must be an integer
 
-Missing arguments
->>> add_integer()
+Missing arguments (message may vary by Python version)
+>>> add_integer()  # doctest: +ELLIPSIS
 Traceback (most recent call last):
-TypeError: add_integer() missing 1 required positional argument: 'a'
+TypeError: ...
 
-Float overflow (casting very large float)
+Float overflow (avoid hardcoding huge integers)
 >>> add_integer(1e308, 1) == int(1e308) + 1
 True
-100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118336
 
 Cannot convert float NaN to integer
 >>> add_integer(float('nan'), 1)
