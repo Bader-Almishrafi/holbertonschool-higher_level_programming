@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""Defines a square 1-square.py"""
+"""Define a class Square."""
+
 
 class Square:
     """
-	Docstring for Square
-	"""
+        Docstring for Square
+        """
 
     def __init__(self, size):
         self.__size = size
