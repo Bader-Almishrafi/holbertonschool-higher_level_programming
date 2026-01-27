@@ -4,8 +4,8 @@
 
 class Square:
     """
-            Docstring for Square
-            """
+     Docstring for Square
+     """
 
     def __init__(self, size):
         if not isinstance(size, int):
