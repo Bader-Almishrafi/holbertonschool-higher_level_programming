@@ -2,7 +2,9 @@
 """Defines a square 1-square.py"""
 
 class Square:
-    """Square class with private size attribute"""
+    """
+	Docstring for Square
+	"""
 
     def __init__(self, size):
         self.__size = size
