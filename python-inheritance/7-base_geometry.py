@@ -1,24 +1,20 @@
 #!/usr/bin/python3
-"""Defines a BaseGeometry class with integer validation."""
+"""BaseGeometry class with validation."""
 
 
 class BaseGeometry:
     """BaseGeometry class."""
 
     def __init__(self, *args, **kwargs):
-        """Initialize BaseGeometry.
-
-        Doctest expects a specific TypeError message when parameters are passed.
-        """
         if args or kwargs:
             raise TypeError("object() takes no parameters")
 
     def area(self):
-        """Raise an exception indicating area is not implemented."""
+        """Raise an exception for unimplemented area."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validate that value is a positive integer."""
+        """Validate a positive integer value."""
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
