@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""5-save_to_json_file.py Defines a function to save a Python object to a file in JSON format."""
+"""5-save_to_json_file.py Defines a function to save a object to a file in JSON"""
 
 
 def save_to_json_file(my_obj, filename):
