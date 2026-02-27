@@ -5,11 +5,18 @@ import MySQLdb
 import sys
 
 
+def strip_quotes(s):
+    """Remove wrapping single/double quotes if present."""
+    if len(s) >= 2 and s[0] == s[-1] and s[0] in ("'", '"'):
+        return s[1:-1]
+    return s
+
+
 if __name__ == "__main__":
     user = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
-    state_name = sys.argv[4]
+    state_name = strip_quotes(sys.argv[4])
 
     db = MySQLdb.connect(
         host="localhost",
@@ -33,8 +40,7 @@ if __name__ == "__main__":
 
     cities = cur.fetchall()
     output = ", ".join([c[0] for c in cities])
-    if output:
-        print(output)
+    print(output)  # always prints newline, even if output is empty
 
     cur.close()
     db.close()
