@@ -1,1 +1,2 @@
-SQL - Introduction
+-- Lists all databases
+SHOW DATABASES;
