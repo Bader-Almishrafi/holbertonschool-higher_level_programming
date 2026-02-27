@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Safely lists all states matching a user-provided name (prevents SQL injection)."""
+"""Safely lists all states matching a user-provided name."""
 
 import MySQLdb
 import sys
