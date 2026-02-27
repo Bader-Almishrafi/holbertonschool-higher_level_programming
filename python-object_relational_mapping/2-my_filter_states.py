@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists all states matching user input"""
+"""Lists all states matching user input (vulnerable to injection)"""
 
 import MySQLdb
 import sys
@@ -21,12 +21,15 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = '{}'".format(state_name)
+    query = (
+        "SELECT * FROM states "
+        "WHERE BINARY name = '{}' "
+        "ORDER BY id ASC"
+    ).format(state_name)
+
     cur.execute(query)
 
-    rows = cur.fetchall()
-
-    for row in rows:
+    for row in cur.fetchall():
         print(row)
 
     cur.close()
