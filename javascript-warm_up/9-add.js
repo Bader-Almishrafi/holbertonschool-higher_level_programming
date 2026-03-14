@@ -1,6 +1,6 @@
 #!/usr/bin/node
-const languages = ['C is fun', 'Python is cool', 'Javascript is amazing'];
-
-for (let i = 0; i < languages.length; i++) {
-  console.log(languages[i]);
+function add (a, b) {
+  return a + b;
 }
+
+console.log(add(Number(process.argv[2]), Number(process.argv[3])));
